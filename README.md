@@ -81,6 +81,39 @@ This project showcases a **production-ready React web application** deployed on 
 
 *Attach your screenshots here as you collect them.*
 
+
+## 💡 Challenges, Resolutions & Business Value
+
+### 🔹 Challenge 1: Containerizing the React App
+
+- **Issue:** Initial Docker build failed because the build artifacts weren’t copied correctly into the Nginx container.
+- **Resolution:** Used a multi-stage Dockerfile — first to build the React app with Vite, then copied the production-ready `/build` folder into an Nginx image. This reduced the image size and ensured static files were served efficiently.
+- **Business Value:** Optimized image size → faster deployments, reduced infrastructure costs, and reliable production performance.
+
+---
+
+### 🔹 Challenge 2: EC2 Network Access
+
+- **Issue:** After running the container, the app wasn’t accessible from the browser.
+- **Resolution:** Configured AWS Security Groups to allow inbound HTTP (port 80) traffic. Verified with `docker ps` and public IP testing.
+- **Business Value:** Ensured proper access controls → balancing security with usability. Demonstrates ability to configure cloud networking securely.
+
+---
+
+### 🔹 Challenge 3: Persistent Deployment & Scalability
+
+- **Issue:** The container would stop on instance restarts. This would cause downtime.
+- **Resolution:** Used `-d` flag (detached mode) and enabled Docker service to start on boot. Prepared the setup so it could be extended later with Docker Compose or an orchestration tool like ECS/Kubernetes.
+- **Business Value:** Increased availability and reliability of the application → critical for any production workload.
+
+---
+
+### 🔹 Challenge 4: Professional Documentation & Demonstration
+
+- **Issue:** A working app is valuable, but without proper documentation and a demo, the project has little portfolio impact.
+- **Resolution:** Added structured README, architecture diagram, and video walkthrough.
+- **Business Value:** Communicates technical ability to both technical and non-technical stakeholders → a key skill for DevOps and Cloud Engineers.
+
 ---
 
 ## 📚 Extra Notes
