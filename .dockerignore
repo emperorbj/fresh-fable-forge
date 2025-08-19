@@ -3,11 +3,7 @@ node_modules
 npm-debug.log
 yarn-error.log
 
-# Ignore build outputs (you usually rebuild inside Docker)
-dist
-build
-.next
-out
+
 
 # Ignore local environment files
 .env
