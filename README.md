@@ -60,8 +60,8 @@ This project showcases a **production-ready React web application** deployed on 
 
 ## 🎥 Demo Video
 
-Deployment Walkthrough Video  
-*Attach your YouTube or Vimeo link here.*
+[▶️ Watch the Deployment Walkthrough](https://www.loom.com/share/54cae3d026ee4cdba301550d39cea550?sid=6eb369be-3f63-44f5-a5ed-ea7caf72e719)
+
 
 ---
 
