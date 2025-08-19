@@ -67,7 +67,7 @@ This project showcases a **production-ready React web application** deployed on 
 
 ## 🗺️ Architecture Diagram
 
-![Architecture Diagram](#)  
+![Architecture Diagram](img.png)  
 *React → Docker → EC2 → Internet*  
 *(Attach your diagram image or link here. Tools: draw.io, Excalidraw, Lucidchart)*
 
