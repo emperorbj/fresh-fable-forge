@@ -1,73 +1,94 @@
-# Welcome to your Lovable project
+# AWS Portfolio: Containerized React App Deployment
 
-## Project info
+## 📌 Project Overview
 
-**URL**: https://lovable.dev/projects/3d807c3e-0205-4c31-8862-d0aa2c7bd756
+This project showcases a **production-ready React web application** deployed on AWS EC2 using Docker and Nginx. It demonstrates modern cloud deployment practices, containerization, and AWS infrastructure setup, making it a strong portfolio piece for DevOps and cloud engineering roles.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🛠 Tech Stack
 
-**Use Lovable**
+- **Frontend:** React (with Vite)
+- **Containerization:** Docker
+- **Cloud Provider:** AWS (EC2, Security Groups, IAM)
+- **Web Server:** Nginx
+- **Version Control:** GitHub
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3d807c3e-0205-4c31-8862-d0aa2c7bd756) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Features
 
-**Use your preferred IDE**
+- Production build of a React app using Vite
+- Containerized with Docker and served via Nginx
+- Deployed on AWS EC2 with secure port mapping and security group configuration
+- Scalable architecture, ready for CI/CD integration
+- Professional documentation, architecture diagram, and deployment demo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ⚡ Deployment Steps (High-Level)
 
-Follow these steps:
+1. **Create EC2 Instance**
+   - Launch an EC2 instance (Amazon Linux/Ubuntu recommended)
+   - Configure Security Groups to allow HTTP (port 80) and SSH (port 22) access
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Install Docker & Docker Compose**
+   - SSH into your EC2 instance and install Docker:
+     ```sh
+     sudo apt update
+     sudo apt install docker.io -y
+     sudo systemctl start docker
+     sudo systemctl enable docker
+     ```
+   - (Optional) Install Docker Compose if needed
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Build and Run the Docker Image**
+   - Clone your repository and navigate to the project directory
+   - Build the Docker image:
+     ```sh
+     docker build -t react-app .
+     ```
+   - Run the container, mapping port 80:
+     ```sh
+     docker run -d -p 80:80 react-app
+     ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **Access the Application**
+   - Visit your EC2 instance's public IP in a browser to view the deployed app
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🎥 Demo Video
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Deployment Walkthrough Video  
+*Attach your YouTube or Vimeo link here.*
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🗺️ Architecture Diagram
 
-## What technologies are used for this project?
+![Architecture Diagram](#)  
+*React → Docker → EC2 → Internet*  
+*(Attach your diagram image or link here. Tools: draw.io, Excalidraw, Lucidchart)*
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🖼️ Screenshots
 
-## How can I deploy this project?
+- App running in browser
+- Docker container logs
+- EC2 instance dashboard
 
-Simply open [Lovable](https://lovable.dev/projects/3d807c3e-0205-4c31-8862-d0aa2c7bd756) and click on Share -> Publish.
+*Attach your screenshots here as you collect them.*
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 📚 Extra Notes
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- For production, consider using a domain name and HTTPS (SSL/TLS)
+- Explore CI/CD integration with GitHub Actions or AWS CodePipeline for automated deployments
+- Monitor and scale your EC2 instance as needed
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+**Feel free to fork this repo and use it as a template for your own AWS
